@@ -1,5 +1,7 @@
 import React from 'react'
 import { Search, Person, Chat, Notifications } from "@material-ui/icons"
+import "./navbar.css";
+
 
 function Navbar() {
     return (
@@ -18,8 +20,8 @@ function Navbar() {
         </div>
         <div className="navbarRight">
           <div className="navbarLinks">
-            <span className="navbarLink">Homepage</span>
-            <span className="navbarLink">Timeline</span>
+            <span className="navbarLink">Home</span>
+            <span className="navbarLink">Feed</span>
           </div>
           <div className="navbarIcons">
             <div className="navbarIconItem">
