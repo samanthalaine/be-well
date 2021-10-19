@@ -76,7 +76,7 @@ import {
             BeWell
           </Typography>
           <Typography variant="h6" className={classes.logoSm}>
-            BeWell
+            
           </Typography>
           <div className={classes.search}>
             <Search />
