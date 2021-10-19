@@ -35,8 +35,16 @@ import {
   }));
   
   const Post = ({ img, title, post }) => {
-    const user = Users.filter(user => user.id === 1)
-    console.log(user[0].username)
+    // const user = Users.filter(user => user.id === 1)
+    // console.log(user[0].username)
+    const [like,setLike] = useState(post.like)
+    const [isLiked,setIsLiked] = useState(false)
+
+    const likeHandler =()=>{
+      setLike(isLiked ? like-1 : like+1)
+      setIsLiked(!isLiked)
+    }
+   
 
     const classes = useStyles();
     const postProfileImg = Users.filter((u) => u.id === post?.userId)[0].profilePicture
@@ -61,12 +69,10 @@ import {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Like
+          <Button size="small" onClick={likeHandler} style={{backgroundColor: '#80DEEA', color: '#fafafa'}}>
+          {like} Likes
           </Button>
-          <Button size="small" color="primary">
-            Love
-          </Button>
+          
           <Typography className="postCommentText">{post.comment > 1 ? <span>{post.comment} comments</span> : <span>{post.comment} comment</span>}</Typography>
         </CardActions>
       </Card>
