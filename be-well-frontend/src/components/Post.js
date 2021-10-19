@@ -55,7 +55,7 @@ import {
             </Typography>
             <span className="postDate">{post.date}</span>
             <img className="postImg" src={post.photo} alt="" />
-            <Typography variant="body2" className="postText">
+            <Typography  className="postText">
             {post.desc}
             </Typography>
           </CardContent>

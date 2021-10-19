@@ -78,5 +78,10 @@
       cursor: pointer;
       border-bottom: 1px dashed gray;
       font-size: 5px;
-      color: #00838F
+      color: #00838F;
+  }
+
+  .postText{
+    font-size: 5px;
+    margin: 10px;
   }
