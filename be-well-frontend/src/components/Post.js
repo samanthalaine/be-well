@@ -39,19 +39,21 @@ import {
     console.log(user[0].username)
 
     const classes = useStyles();
+    const postProfileImg = Users.filter((u) => u.id === post?.userId)[0].profilePicture
     const postImage='https://media.istockphoto.com/photos/portrait-of-female-biker-smiling-for-camera-in-public-park-picture-id1270401890?b=1&k=20&m=1270401890&s=170667a&w=0&h=reGiOec2FpRGg5eHs0qRqwBO9aZuMrHxAP4djcQZWq0='
     return (
         <main className={classes.content}>
             <div className={classes.toolbar}/>
       <Card className={classes.card}>
         <CardActionArea>
-          <CardMedia className={classes.media} className="postProfileImg" image={'https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmlrZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'} title="Post" />
+          <CardMedia className={classes.media} className="postProfileImg" image={postProfileImg} title="Post" />
           <CardContent>
-            <Typography gutterBottom variant="h5">
+            <Typography gutterBottom>
             <span className="postUsername">
               {Users.filter((user)=> user.id === post.userId)[0].username}
             </span>
             </Typography>
+            <span className="postDate">{post.date}</span>
             <img className="postImg" src={post.photo} alt="" />
             <Typography variant="body2" className="postText">
             {post.desc}
@@ -65,7 +67,7 @@ import {
           <Button size="small" color="primary">
             Love
           </Button>
-          <span className="postCommentText">{post.comment} comments</span>
+          <Typography className="postCommentText">{post.comment > 1 ? <span>{post.comment} comments</span> : <span>{post.comment} comment</span>}</Typography>
         </CardActions>
       </Card>
       </main>

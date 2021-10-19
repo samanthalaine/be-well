@@ -1,52 +1,52 @@
 export const Users = [
   {
     id:1,
-    profilePicture: "assets/person/1.jpeg",
+    profilePicture: "assets/people/womansunset.jpeg",
     username: "Sam Jackson",
   },
   {
     id:2,
-    profilePicture: "assets/person/2.jpeg",
+    profilePicture: "assets/people/biking.jpeg",
     username: "Randi Shrum",
   },
   {
     id:3,
-    profilePicture: "assets/person/3.jpeg",
+    profilePicture: "assets/people/headphones.jpeg",
     username: "Alex Durden",
   },
   {
     id:4,
-    profilePicture: "assets/person/4.jpeg",
+    profilePicture: "assets/people/person.jpeg",
     username: "Avery Hawks",
   },
   {
     id:5,
-    profilePicture: "assets/person/5.jpeg",
+    profilePicture: "assets/people/womanbiking.jpeg",
     username: "Taylor Holden",
   },
   {
     id:6,
-    profilePicture: "assets/person/6.jpeg",
+    profilePicture: "assets/people/womansmiling.jpeg",
     username: "Jamie Beauchamp",
   },
   {
     id:7,
-    profilePicture: "assets/person/7.jpeg",
+    profilePicture: "assets/people/mountain.jpeg",
     username: "Frankie Bennett",
   },
   {
     id:8,
-    profilePicture: "assets/person/8.jpeg",
+    profilePicture: "assets/people/manandkid.jpeg",
     username: "Billie Thomas",
   },
   {
     id:9,
-    profilePicture: "assets/person/9.jpeg",
+    profilePicture: "assets/people/womanyoga.jpeg",
     username: "Cameron Duty",
   },
   {
     id:10,
-    profilePicture: "assets/person/10.jpeg",
+    profilePicture: "assets/people/athlete.jpg",
     username: "Riley Owens",
   },
 ];
@@ -54,7 +54,7 @@ export const Users = [
 export const Posts = [
   {
     id: 1,
-    desc: "Getting some fresh air <3",
+    desc: "Getting some fresh air :)",
     photo: "assets/people/womansunset.jpeg",
     date: "5 mins ago",
     userId: 1,
