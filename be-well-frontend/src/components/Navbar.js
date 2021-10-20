@@ -10,6 +10,7 @@ import {
   } from "@material-ui/core";
   import { Cancel, Mail, Notifications, Search } from "@material-ui/icons";
   import { useState } from "react";
+  import {Link} from 'react-router-dom'
   
   const useStyles = makeStyles((theme) => ({
     toolbar: {
@@ -72,9 +73,9 @@ import {
     return (
       <AppBar style={{ background: "#00ACC1" }} position="fixed">
         <Toolbar className={classes.toolbar}>
-          <Typography variant="h6" className={classes.logoLg} style={{ color: "#FAFAFA" }}>
-            BeWell
-          </Typography>
+          <Link to='/' style={{textDecoration: "none"}}>
+          <Typography variant="h6" className={classes.logoLg} style={{ color: "#FAFAFA" }}>BeWell</Typography>
+          </Link>
           <Typography variant="h6" className={classes.logoSm}>
             
           </Typography>
