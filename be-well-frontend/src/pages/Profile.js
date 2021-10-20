@@ -1,8 +1,8 @@
 import "./profile.css";
-import Navbar from "../../components/Navbar";
-import Leftbar from "../../components/Leftbar";
-import Feed from "../../components/Feed";
-import Rightbar from "../../components/Rightbar";
+import Navbar from '../components/Navbar'
+import Leftbar from '../components/Leftbar'
+import Rightbar from '../components/Rightbar'
+import Feed from '../components/Feed'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
