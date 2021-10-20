@@ -11,8 +11,16 @@ import {
   } from "@material-ui/core";
   import { MoreVert, ThumbUpIcon } from "@material-ui/icons";
   import "./post.css";
-  import { useState } from "react";
-  import { Users } from "./dummyData"
+  import { useState, useEffect, useContext } from "react";
+  import axios from "axios";
+  import { Link } from "react-router-dom";
+  import { format } from "timeago.js";
+
+
+  
+
+  //import { Users } from "./dummyData"
+
 
 
   
@@ -37,8 +45,19 @@ import {
   const Post = ({ img, title, post }) => {
     // const user = Users.filter(user => user.id === 1)
     // console.log(user[0].username)
-    const [like,setLike] = useState(post.like)
+    const [like,setLike] = useState(post.likes.length)
     const [isLiked,setIsLiked] = useState(false)
+    const [user, setUser] = useState({});
+
+
+    useEffect(() =>{
+      const fetchUser = async () => {
+
+      const res = await axios.get(`users/${post.userId}`)
+      setUser(res.data)
+      }
+      fetchUser()
+  }, [post.userId])
 
     const likeHandler =()=>{
       setLike(isLiked ? like-1 : like+1)
@@ -47,22 +66,22 @@ import {
    
 
     const classes = useStyles();
-    const postProfileImg = Users.filter((u) => u.id === post?.userId)[0].profilePicture
+    
     const postImage='https://media.istockphoto.com/photos/portrait-of-female-biker-smiling-for-camera-in-public-park-picture-id1270401890?b=1&k=20&m=1270401890&s=170667a&w=0&h=reGiOec2FpRGg5eHs0qRqwBO9aZuMrHxAP4djcQZWq0='
     return (
         <main className={classes.content}>
             <div className={classes.toolbar}/>
       <Card className={classes.card}>
         <CardActionArea>
-          <CardMedia className={classes.media} className="postProfileImg" image={postProfileImg} title="Post" />
+          <CardMedia className={classes.media} className="postProfileImg" image={user.profilePicture || "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="} title="Post" />
           <CardContent>
             <Typography gutterBottom>
             <span className="postUsername">
-              {Users.filter((user)=> user.id === post.userId)[0].username}
+              {user.username}
             </span>
             </Typography>
-            <span className="postDate">{post.date}</span>
-            <img className="postImg" src={post.photo} alt="" />
+            <span className="postDate">{format(post.createdAt)}</span>
+            <img className="postImg" src={post.img} alt="image" />
             <Typography  className="postText">
             {post.desc}
             </Typography>
