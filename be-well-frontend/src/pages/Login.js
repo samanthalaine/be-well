@@ -14,31 +14,34 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useContext, useRef } from "react";
+import { AuthContext } from "../context/AuthContext";
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        BeWell
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+
+// function Copyright(props) {
+//   return (
+//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
+//       {'Copyright © '}
+//       <Link color="inherit" href="https://mui.com/">
+//         BeWell
+//       </Link>{' '}
+//       {new Date().getFullYear()}
+//       {'.'}
+//     </Typography>
+//   );
+// }
 
 const theme = createTheme();
 
 export default function Login() {
+  const email = useRef();
+  const password = useRef();
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    console.log(email.current.value)
+    
   };
 
   return (
@@ -59,26 +62,28 @@ export default function Login() {
           <Typography component="h1" variant="h5">
             Sign in to BeWell
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={handleSubmit}  sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
               fullWidth
               id="email"
               label="Email Address"
-              name="email"
-              autoComplete="email"
+              type="email"
               autoFocus
+              ref={email}
+              
             />
             <TextField
               margin="normal"
               required
+              minLength="6"
               fullWidth
-              name="password"
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
+              ref={password}
+              
             />
             <FormControlLabel
               control={<Checkbox value="remember" style={{ color: "#00ACC1" }} />}
@@ -107,7 +112,7 @@ export default function Login() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+        {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
       </Container>
     </ThemeProvider>
   );

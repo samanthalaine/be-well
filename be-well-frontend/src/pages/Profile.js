@@ -38,7 +38,7 @@ export default function Profile() {
               <img
                 className="profileUserImg"
                 src={
-                  user.profilePicture
+                  user.profilePicture || "https://images.unsplash.com/photo-1479090793912-eb9929f4fdb2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9vbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
             
                 }
                 alt="user profile pic"
