@@ -10,11 +10,26 @@ import {
   Event,
   School,
   ExitToApp
-} from "@material-ui/icons";
-// import { Users } from "../../dummyData";
-// import CloseFriend from "../closeFriend/CloseFriend";
+} from "@material-ui/icons"
 
-export default function Sidebar() {
+import Online from './Online'
+import { useContext, useEffect, useState } from "react";
+import axios from "axios";
+import { Add, Remove } from "@material-ui/icons";
+import { AuthContext } from "../context/AuthContext";
+
+
+
+
+export default function Leftbar({user}) {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const [friends, setFriends] = useState([]);
+  const { user: currentUser, dispatch } = useContext(AuthContext);
+  const [followed, setFollowed] = useState(
+    
+  );
+
+
   return (
     <div className="leftbar">
       <div className="leftbarWrapper">
@@ -46,18 +61,63 @@ export default function Sidebar() {
             <span className="leftbarListItemText">Logout</span>
           </li>
         </ul>
-        <button className="leftbarButton">Show More</button>
         <hr className="leftbarHr" />
-        <ul>
-          <li>friend</li>
-          <li>friend</li>
-          <li>friend</li>
-          <li>friend</li>
-          <li>friend</li>
-        </ul>
+        <h6>My followers</h6>
+        <div className="leftbarFollowings">
+          <div className="leftbarFollowing">
+            <img
+              src="assets/person/1.jpeg"
+              alt=""
+              className="leftbarFollowingImg"
+            />
+            <span className="leftbarFollowingName">John Carter</span>
+          </div>
+          <div className="leftbarFollowing">
+            <img
+              src="assets/person/1.jpeg"
+              alt=""
+              className="leftbarFollowingImg"
+            />
+            <span className="leftbarFollowingName">John Carter</span>
+          </div>
+          <div className="leftbarFollowing">
+            <img
+              src="assets/person/1.jpeg"
+              alt=""
+              className="leftbarFollowingImg"
+            />
+            <span className="leftbarFollowingName">John Carter</span>
+          </div>
+          <div className="leftbarFollowing">
+            <img
+              src="assets/person/1.jpeg"
+              alt=""
+              className="leftbarFollowingImg"
+            />
+            <span className="leftbarFollowingName">John Carter</span>
+          </div>
+          <div className="leftbarFollowing">
+            <img
+              src="assets/person/1.jpeg"
+              alt=""
+              className="leftbarFollowingImg"
+            />
+            <span className="leftbarFollowingName">John Carter</span>
+          </div>
+          <div className="leftbarFollowing">
+            <img
+              src="assets/person/1.jpeg"
+              alt=""
+              className="leftbarFollowingImg"
+            />
+            <span className="leftbarFollowingName">John Carter</span>
+          </div>
+       
+        </div>
+       
         {/* <ul className="sidebarFriendList">
           {Users.map((u) => (
-            <CloseFriend key={u.id} user={u} />
+            <Friends key={u.id} user={u} />
           ))}
         </ul> */}
       </div>

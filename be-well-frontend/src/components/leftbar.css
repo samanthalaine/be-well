@@ -54,3 +54,53 @@
     margin: 0;
     list-style: none;
   }
+
+  .rightbarFriendList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .leftbarTitle{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .leftbarInfo{
+    margin-bottom: 30px;
+  }
+  
+  .leftbarInfoItem{
+    margin-bottom: 10px;
+  }
+  
+  .leftbarInfoKey{
+    font-weight: 500;
+    margin-right: 15px;
+    color: #555;
+  }
+  
+  .leftbarInfoValue{
+    font-weight: 300;
+  }
+  
+  .leftbarFollowings{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .leftbarFollowing{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .leftbarFollowingImg{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
