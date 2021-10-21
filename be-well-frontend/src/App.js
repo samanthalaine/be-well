@@ -23,7 +23,7 @@ function App() {
       <Switch>
         <Route exact path = '/'>
         {user ? <Home /> : <Register />}
-          <Home/>
+          
         </Route>
         <Route path = '/login'>
           <Login/>

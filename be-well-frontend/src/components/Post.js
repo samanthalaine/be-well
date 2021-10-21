@@ -67,14 +67,15 @@ import {
    
 
     const classes = useStyles();
+    const blankProfilePic = "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="
+
     
-    const postImage='https://media.istockphoto.com/photos/portrait-of-female-biker-smiling-for-camera-in-public-park-picture-id1270401890?b=1&k=20&m=1270401890&s=170667a&w=0&h=reGiOec2FpRGg5eHs0qRqwBO9aZuMrHxAP4djcQZWq0='
     return (
         <main className={classes.content}>
             <div className={classes.toolbar}/>
       <Card className={classes.card}>
         <CardActionArea>
-          <CardMedia className={classes.media} className="postProfileImg" image={user.profilePicture || "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="} title="Post" />
+          <CardMedia className={classes.media} className="postProfileImg" image={user.profilePicture || blankProfilePic} title="Post" />
           <CardContent>
             <Typography gutterBottom>
             <span className="postUsername">
