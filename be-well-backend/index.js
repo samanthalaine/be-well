@@ -9,6 +9,8 @@ const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const cors = require('cors');
 const multer = require("multer");
+const path = require("path");
+
 
 
 
@@ -23,6 +25,9 @@ mongoose.connect(
   }
 );
 
+app.use("/images", express.static(path.join(__dirname, "public/images")));
+
+
 //middleware
 app.use(express.json());
 app.use(helmet());
@@ -34,7 +39,7 @@ const storage = multer.diskStorage({
     cb(null, "public/images");
   },
   filename: (req, file, cb) => {
-    cb(null, file.original);
+    cb(null, req.body.name);
   },
 });
 

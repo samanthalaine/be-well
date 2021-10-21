@@ -45,6 +45,10 @@ function Share() {
   const blankProfilePic = "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="
   const classes = useStyles();
 
+//if there is a new file, new form data will be created. 
+//it will indicate file & name. afterwards, it will be uploaded.
+//image will be added to new post and then it will post to api as new post.
+
   const submitHandler = async (e) => {
     e.preventDefault();
     const newPost = {
@@ -62,6 +66,8 @@ function Share() {
         await axios.post("/upload", data);
       } catch (err) {}
     }
+
+    //refresh page after adding post
     try {
       await axios.post("/posts", newPost);
       window.location.reload();
@@ -102,7 +108,7 @@ function Share() {
                 style={{ display: "none" }}
                 type="file"
                 id="file"
-                accept=".png,.jpeg,.jpg"
+                accept=".png, .jpeg, .jpg, .gif"
                 onChange={(e) => setFile(e.target.files[0])}
               />
             </label>
