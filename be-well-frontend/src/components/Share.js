@@ -11,6 +11,10 @@ import {
     makeStyles,
     Typography,
   } from "@material-ui/core";
+  import { AuthContext } from "../context/AuthContext";
+  import { useContext, useRef, useState } from "react";
+
+
 
   const useStyles = makeStyles((theme) => ({
     toolbar: theme.mixins.toolbar,
@@ -33,6 +37,9 @@ import {
 
 
 function Share() {
+  const { user } = useContext(AuthContext);
+
+
     const classes = useStyles();
     return (
         <main className={classes.content}>

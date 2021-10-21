@@ -38,7 +38,7 @@ export default function Profile() {
               <img
                 className="profileUserImg"
                 src={
-                  user.profilePicture || "https://images.unsplash.com/photo-1479090793912-eb9929f4fdb2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9vbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+                  user.profilePicture || "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="
             
                 }
                 alt="user profile pic"
