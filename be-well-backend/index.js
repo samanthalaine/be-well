@@ -8,6 +8,7 @@ const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const cors = require('cors');
+const multer = require("multer");
 
 
 
@@ -28,6 +29,23 @@ app.use(helmet());
 app.use(morgan("common"));
 app.use(cors());
 
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "public/images");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.original);
+  },
+});
+
+const upload = multer({ storage: storage });
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  try {
+    return res.status(200).json("File uploaded successfully.");
+  } catch (error) {
+    console.error(error);
+  }
+});
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
