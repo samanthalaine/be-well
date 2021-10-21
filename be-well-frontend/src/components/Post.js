@@ -43,8 +43,7 @@ import {
   }));
   
   const Post = ({ img, title, post }) => {
-    // const user = Users.filter(user => user.id === 1)
-    // console.log(user[0].username)
+
     const [like,setLike] = useState(post.likes.length)
     const [isLiked,setIsLiked] = useState(false)
     const [user, setUser] = useState({});

@@ -27,10 +27,7 @@ export default function Sidebar() {
             <Chat className="leftbarIcon" />
              <span className="leftbarListItemText"> Messages</span>
           </li>
-          <li className="leftbarListItem">
-            <PlayCircleFilledOutlined className="leftbarIcon" />
-            <span className="leftbarListItemText">Videos</span>
-          </li>
+         
           <li className="leftbarListItem">
             <Group className="leftbarIcon" />
             <span className="leftbarListItemText">Groups</span>
@@ -43,10 +40,7 @@ export default function Sidebar() {
             <HelpOutline className="leftbarIcon" />
             <span className="leftbarListItemText">Questions</span>
           </li>
-          <li className="leftbarListItem">
-            <Event className="leftbarIcon" />
-            <span className="leftbarListItemText">Events</span>
-          </li>
+          
           <li className="leftbarListItem">
             <ExitToApp className="leftbarIcon" />
             <span className="leftbarListItemText">Logout</span>
