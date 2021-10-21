@@ -8,9 +8,13 @@ import {
     Toolbar,
     Typography,
   } from "@material-ui/core";
-  import { Cancel, Mail, Notifications, Search } from "@material-ui/icons";
+  import { Cancel, Mail, Notifications, Search, Person } from "@material-ui/icons";
   import { useState } from "react";
   import {Link} from 'react-router-dom'
+  import { useContext } from "react";
+  import { AuthContext } from "../context/AuthContext";
+
+
   
   const useStyles = makeStyles((theme) => ({
     toolbar: {
@@ -70,6 +74,11 @@ import {
   const Navbar = () => {
     const [open, setOpen] = useState(false);
     const classes = useStyles({ open });
+    const { user } = useContext(AuthContext);
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const blankProfilePic = "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="
+
+
     return (
       <AppBar style={{ background: "#00ACC1" }} position="fixed">
         <Toolbar className={classes.toolbar}>
@@ -90,14 +99,20 @@ import {
               onClick={() => setOpen(true)}
             />
             <Badge badgeContent={4} color="secondary" className={classes.badge}>
+              <Person />
+            </Badge>
+            <Badge badgeContent={4} color="secondary" className={classes.badge}>
               <Mail />
             </Badge>
             <Badge badgeContent={2} color="secondary" className={classes.badge}>
               <Notifications />
             </Badge>
             <Avatar
-              alt=""
-              src=""
+              src={user.profilePicture
+                ? PF + user.profilePicture
+                : PF + blankProfilePic}
+              alt='user profile picture'
+              className="navbarImg"
             />
           </div>
         </Toolbar>
