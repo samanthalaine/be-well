@@ -8,7 +8,7 @@ import axios from "axios";
 import { useParams } from "react-router";
 
 export default function Profile() {
-  
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [user, setUser] = useState({});
   const username = useParams().username;
 
@@ -28,19 +28,17 @@ export default function Profile() {
         <div className="profileRight">
           <div className="profileRightTop">
             <div className="profileCover">
-              <img
+            <img
                 className="profileCoverImg"
                 src={
                   user.coverPicture
+                    
                 }
-                alt="user cover pic"
+                alt="cover picture"
               />
               <img
                 className="profileUserImg"
-                src={
-                  user.profilePicture || "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="
-            
-                }
+                src={user.profilePicture}
                 alt="user profile pic"
               />
             </div>
