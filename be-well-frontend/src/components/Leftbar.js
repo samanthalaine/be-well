@@ -12,7 +12,6 @@ import {
   ExitToApp
 } from "@material-ui/icons"
 
-import Online from './Online'
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Add, Remove } from "@material-ui/icons";
@@ -114,8 +113,7 @@ export default function Leftbar({}) {
                 <img
                   src={
                     friend.profilePicture
-                      ? PF + friend.profilePicture
-                      : PF + blankProfilePic
+                      
                   }
                   alt="friends"
                   className="leftbarFollowingImg"

@@ -77,7 +77,17 @@ import {
             <div className={classes.toolbar}/>
       <Card className={classes.card}>
         <CardActionArea>
-          <CardMedia className={classes.media} className="postProfileImg" image={user.profilePicture || blankProfilePic} title="Post" />
+          
+          <Link to={`/profile/${user.username}`}>
+              <img
+                className="postProfileImg"
+                src={
+                  user.profilePicture
+                    
+                }
+                alt="profile picture"
+              />
+            </Link>
           <CardContent>
             <Typography gutterBottom>
             <span className="postUsername">
