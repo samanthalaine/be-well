@@ -17,6 +17,8 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Add, Remove } from "@material-ui/icons";
 import { AuthContext } from "../context/AuthContext";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -25,12 +27,52 @@ export default function Leftbar({user}) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [friends, setFriends] = useState([]);
   const { user: currentUser, dispatch } = useContext(AuthContext);
-  const [followed, setFollowed] = useState(
-    
-  );
+  const blankProfilePic = "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="
+
+  // const [followed, setFollowed] = useState(
+  //   currentUser.followings.includes(user._id)
+  // );
+
+  useEffect(() => {
+    const getFriends = async () => {
+      try {
+        const friendList = await axios.get("/users/friends/" + user._id);
+        setFriends(friendList.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getFriends();
+  }, [user]);
+
+
+  // const handleClick = async () => {
+  //   try {
+  //     if (followed) {
+  //       await axios.put(`/users/${user._id}/unfollow`, {
+  //         userId: currentUser._id,
+  //       });
+  //       dispatch({ type: "UNFOLLOW", payload: user._id });
+  //     } else {
+  //       await axios.put(`/users/${user._id}/follow`, {
+  //         userId: currentUser._id,
+  //       });
+  //       dispatch({ type: "FOLLOW", payload: user._id });
+  //     }
+  //     setFollowed(!followed);
+  //   } catch (err) {
+  //   }
+  // };
 
 
   return (
+    <>
+      {/* {user.username !== currentUser.username && (
+          <button className="rightbarFollowButton" onClick={handleClick}>
+            {followed ? "Unfollow" : "Follow"}
+            {followed ? <Remove /> : <Add />}
+          </button>
+        )} */}
     <div className="leftbar">
       <div className="leftbarWrapper">
         <ul className="leftbarList">
@@ -62,65 +104,30 @@ export default function Leftbar({user}) {
           </li>
         </ul>
         <hr className="leftbarHr" />
-        <h6>My followers</h6>
+        <h6 className="leftbarTitle">My followers</h6>
+        
         <div className="leftbarFollowings">
-          <div className="leftbarFollowing">
-            <img
-              src="assets/person/1.jpeg"
-              alt=""
-              className="leftbarFollowingImg"
-            />
-            <span className="leftbarFollowingName">John Carter</span>
-          </div>
-          <div className="leftbarFollowing">
-            <img
-              src="assets/person/1.jpeg"
-              alt=""
-              className="leftbarFollowingImg"
-            />
-            <span className="leftbarFollowingName">John Carter</span>
-          </div>
-          <div className="leftbarFollowing">
-            <img
-              src="assets/person/1.jpeg"
-              alt=""
-              className="leftbarFollowingImg"
-            />
-            <span className="leftbarFollowingName">John Carter</span>
-          </div>
-          <div className="leftbarFollowing">
-            <img
-              src="assets/person/1.jpeg"
-              alt=""
-              className="leftbarFollowingImg"
-            />
-            <span className="leftbarFollowingName">John Carter</span>
-          </div>
-          <div className="leftbarFollowing">
-            <img
-              src="assets/person/1.jpeg"
-              alt=""
-              className="leftbarFollowingImg"
-            />
-            <span className="leftbarFollowingName">John Carter</span>
-          </div>
-          <div className="leftbarFollowing">
-            <img
-              src="assets/person/1.jpeg"
-              alt=""
-              className="leftbarFollowingImg"
-            />
-            <span className="leftbarFollowingName">John Carter</span>
-          </div>
-       
-        </div>
-       
-        {/* <ul className="sidebarFriendList">
-          {Users.map((u) => (
-            <Friends key={u.id} user={u} />
+         
+          {friends.map((friend) => (
+            
+              <div className="leftbarFollowing">
+                <img
+                  src={
+                    friend.profilePicture
+                      ? PF + friend.profilePicture
+                      : PF + blankProfilePic
+                  }
+                  alt="friends"
+                  className="leftbarFollowingImg"
+                />
+                <span className="leftbarFollowingName">{friend.username}</span>
+              </div>
+            
           ))}
-        </ul> */}
+        </div>
       </div>
+      
     </div>
+    </>
   );
 }
