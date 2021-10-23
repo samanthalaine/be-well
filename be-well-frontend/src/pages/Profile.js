@@ -6,6 +6,8 @@ import Feed from '../components/Feed'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import { AuthContext } from "../context/AuthContext";
+
 
 export default function Profile() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -31,14 +33,14 @@ export default function Profile() {
             <img
                 className="profileCoverImg"
                 src={
-                  user.coverPicture
+                  PF +user.coverPicture
                     
                 }
                 alt="cover picture"
               />
               <img
                 className="profileUserImg"
-                src={user.profilePicture}
+                src={PF + user.profilePicture}
                 alt="user profile pic"
               />
             </div>

@@ -96,7 +96,7 @@ router.get("/timeline/:userId", async (req, res) => {
     }
   });
 
-  //get all user's posts
+  //get all user's posts on profile page
 
 router.get("/profile/:username", async (req, res) => {
     try {
