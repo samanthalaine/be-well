@@ -46,12 +46,7 @@ export default function Leftbar({}) {
 
   return (
     <>
-      {/* {user.username !== currentUser.username && (
-          <button className="rightbarFollowButton" onClick={handleClick}>
-            {followed ? "Unfollow" : "Follow"}
-            {followed ? <Remove /> : <Add />}
-          </button>
-        )} */}
+     
     <div className="leftbar">
       <div className="leftbarWrapper">
         <ul className="leftbarList">
