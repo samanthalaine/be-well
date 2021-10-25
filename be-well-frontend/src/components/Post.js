@@ -7,7 +7,8 @@ import {
     CardMedia,
     makeStyles,
     Typography,
-    IconButton
+    IconButton,
+    Avatar
   } from "@material-ui/core";
   import { MoreVert, ThumbUpIcon } from "@material-ui/icons";
   import "./post.css";

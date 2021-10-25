@@ -78,7 +78,7 @@ export default function Leftbar({}) {
           </li>
         </ul>
         <hr className="leftbarHr" />
-        <h6 className="leftbarTitle">My friends</h6>
+        <h6 className="leftbarTitle">People you follow</h6>
         
         <div className="leftbarFollowings">
          
