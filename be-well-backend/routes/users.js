@@ -79,8 +79,8 @@ router.get("/friends/:userId", async (req, res) => {
 router.put('/:id/follow', async (req, res)=>{
   if (req.body.userId !== req.params.id){
     try {
-      const user = await User.findById(req.params.id)
-      const currentUser = await User.findById(req.body.userId)
+      const user = await User.findByIdAndUpdate(req.params.id)
+      const currentUser = await User.findByIdAndUpdate(req.body.userId)
       if (!user.followers.includes(req.body.userId)){
         await user.updateOne({$push:{followers: req.body.userId}})
         await currentUser.updateOne({$push:{following: req.params.id}})

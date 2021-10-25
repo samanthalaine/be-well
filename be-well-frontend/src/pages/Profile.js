@@ -6,7 +6,6 @@ import Feed from '../components/Feed'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
-import { AuthContext } from "../context/AuthContext";
 
 
 export default function Profile() {

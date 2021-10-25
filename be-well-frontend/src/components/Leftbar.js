@@ -28,9 +28,7 @@ export default function Leftbar({}) {
   const { user } = useContext(AuthContext);
   const blankProfilePic = "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="
 
-  // const [followed, setFollowed] = useState(
-  //   currentUser.followings.includes(user._id)
-  // );
+
 
   useEffect(() => {
     const getFriends = async () => {
@@ -44,24 +42,6 @@ export default function Leftbar({}) {
     getFriends();
   }, [user]);
 
-
-  // const handleClick = async () => {
-  //   try {
-  //     if (followed) {
-  //       await axios.put(`/users/${user._id}/unfollow`, {
-  //         userId: currentUser._id,
-  //       });
-  //       dispatch({ type: "UNFOLLOW", payload: user._id });
-  //     } else {
-  //       await axios.put(`/users/${user._id}/follow`, {
-  //         userId: currentUser._id,
-  //       });
-  //       dispatch({ type: "FOLLOW", payload: user._id });
-  //     }
-  //     setFollowed(!followed);
-  //   } catch (err) {
-  //   }
-  // };
 
 
   return (
@@ -103,7 +83,7 @@ export default function Leftbar({}) {
           </li>
         </ul>
         <hr className="leftbarHr" />
-        <h6 className="leftbarTitle">My followers</h6>
+        <h6 className="leftbarTitle">My friends</h6>
         
         <div className="leftbarFollowings">
          

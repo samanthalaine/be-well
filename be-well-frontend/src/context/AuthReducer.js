@@ -32,7 +32,7 @@ const AuthReducer = (state, action) => {
             user: {
               ...state.user,
               following: state.user.following.filter(
-                (following) => following !== action.payload),
+                (followings) => followings !== action.payload),
             },
           };
         default:

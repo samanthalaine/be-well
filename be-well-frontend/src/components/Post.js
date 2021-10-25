@@ -37,7 +37,7 @@ import {
     },
   }));
   
-  const Post = ({ img, title, post }) => {
+  const Post = ({ post }) => {
 
     const [like,setLike] = useState(post.likes.length)
     const [isLiked,setIsLiked] = useState(false)
