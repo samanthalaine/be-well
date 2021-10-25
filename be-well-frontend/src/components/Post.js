@@ -105,7 +105,7 @@ import {
         </CardActionArea>
         <CardActions>
           <Button size="small" onClick={likeHandler} style={{backgroundColor: '#80DEEA', color: '#fafafa'}}>
-          {like} Likes
+          {like === 1 ? `${like} Like` : `${like} Likes`}
           </Button>
           
           <Typography className="postCommentText">{post.comment > 1 ? <span>{post.comment} comments</span> : <span>{post.comment} comment</span>}</Typography>

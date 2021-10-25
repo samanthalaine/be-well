@@ -3,6 +3,7 @@ import { Doughnut } from 'react-chartjs-2';
 import { useState, useEffect} from 'react'
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper'
+import Navbar from '../components/Navbar'
 
 
 
@@ -24,6 +25,8 @@ function ExerciseTracker() {
         }]
     };
     return (
+        <>
+        <Navbar/>
         <Paper style={{padding :20,height:'95vh',width:500, margin:"100px auto"}}>
             <h3 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Exercise Tracker</h3>
             <Doughnut 
@@ -31,6 +34,7 @@ function ExerciseTracker() {
                 />
                 <Button style={{ background: "#B2EBF2", display: 'flex', alignItems: 'center', justifyContent: 'center', margin:"40px auto" }}>Click to Complete</Button>
         </Paper>
+        </>
     )
 }
 
