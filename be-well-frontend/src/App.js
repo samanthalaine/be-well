@@ -2,6 +2,7 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Profile from "./pages/Profile"
+import ExerciseTracker from "./pages/ExerciseTracker"
 
 import {
   BrowserRouter as Router,
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route path="/profile/:username">
           <Profile />
+        </Route>
+        <Route path="/tracker">
+          <ExerciseTracker />
         </Route>
       </Switch>
     </Router>
