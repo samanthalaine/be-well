@@ -14,6 +14,8 @@ import {
   import { AuthContext } from "../context/AuthContext";
   import { useContext, useRef, useState } from "react";
   import axios from "axios";
+  import { Link } from 'react-router-dom'
+
 
 
 
@@ -80,12 +82,14 @@ function Share() {
             <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
+        <Link to={`/profile/${user.username}`}>
           <img
             className="shareProfileImg"
             src={
               user.profilePicture}
             alt="Profile picture"
           />
+          </Link>
           <input
             placeholder={"What's on your mind " + user.username + "?"}
             className="shareInput"

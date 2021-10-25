@@ -85,14 +85,16 @@ export default function Leftbar({}) {
           {friends.map((friend) => (
             
               <div className="leftbarFollowing">
+                <Link
+              to={"/profile/" + friend.username}
+              style={{ textDecoration: "none" }}
+            >
                 <img
-                  src={
-                    friend.profilePicture
-                      
-                  }
+                  src={friend.profilePicture}
                   alt="friends"
                   className="leftbarFollowingImg"
                 />
+                </Link>
                 <span className="leftbarFollowingName">{friend.username}</span>
               </div>
             

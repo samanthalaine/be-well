@@ -114,13 +114,14 @@ import {
             <Badge badgeContent={0} color="secondary" className={classes.badge}>
               <ExitToApp onClick={handleLogout}/>
             </Badge>
+            <Link to={`/profile/${user.username}`}>
+
             <Avatar
-              src={user.profilePicture
-                ? PF + user.profilePicture
-                : PF + blankProfilePic}
+              src={user.profilePicture}  
               alt='user profile picture'
               className="navbarImg"
             />
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
