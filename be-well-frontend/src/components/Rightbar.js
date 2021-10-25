@@ -301,7 +301,7 @@ export default function Rightbar({ user  }) {
         <div className="birthdayContainer">
           <img className="birthdayImg" src="assets/gift.png" alt="" />
           <span className="birthdayText">
-            <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
+            <b>Pola Foster</b> and <b>3 other friends</b> have a birthday today.
           </span>
         </div>
         <img className="rightbarAd" src="assets/ad.png" alt="" />
@@ -345,7 +345,7 @@ export default function Rightbar({ user  }) {
             </span>
           </div>
         </div>
-        <h4 className="rightbarTitle">User friends</h4>
+        <h4 className="rightbarTitle">{user.username}'s followers</h4>
         <div className="rightbarFollowings">
           {friends.map((friend) => (
             <Link
