@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//get msg
+//get all msgs from convo
 
 router.get("/:conversationId", async (req, res) => {
   try {
