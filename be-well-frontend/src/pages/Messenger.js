@@ -29,9 +29,9 @@ function Messenger() {
 
   return (
     <>
-      {/* <Navbar />
+      <Navbar />
       <main className={classes.content}>
-        <div className={classes.toolbar} /> */}
+        <div className={classes.toolbar} /> 
 
         <div className="messenger">
         <div className="chatMenu">
@@ -65,7 +65,7 @@ function Messenger() {
             </div>
         </div>
         </div>
-      {/* </main> */}
+      </main>
     </>
   );
 }
