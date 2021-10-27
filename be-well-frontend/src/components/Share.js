@@ -2,12 +2,7 @@ import React from 'react'
 import './share.css'
 import {PermMedia, Label,Room, EmojiEmotions, Cancel} from "@material-ui/icons"
 import {
-    Button,
-    Card,
-    CardActionArea,
-    CardActions,
-    CardContent,
-    CardMedia,
+    
     makeStyles,
     Typography,
   } from "@material-ui/core";

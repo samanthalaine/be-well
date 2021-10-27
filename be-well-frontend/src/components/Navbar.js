@@ -79,6 +79,7 @@ import {
     const { user, dispatch } = useContext(AuthContext);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const blankProfilePic = "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="
+    const logo = "https://media.discordapp.net/attachments/887887430475186176/902750907853336656/BeWell_Logo.png"
     
     const handleLogout = () =>{
       dispatch({ type: "LOGOUT" })
@@ -89,6 +90,7 @@ import {
       <AppBar style={{ background: "#00ACC1" }} position="fixed">
         <Toolbar className={classes.toolbar}>
           <Link to='/' style={{textDecoration: "none"}}>
+          {/* <Typography variant="h6" className={classes.logoLg} style={{ color: "#FAFAFA" }}>BeWell <img src={logo} alt='logo' height='20px' width="30px" className={classes.image}/>  </Typography> */}
           <Typography variant="h6" className={classes.logoLg} style={{ color: "#FAFAFA" }}>BeWell</Typography>
           </Link>
           <Typography variant="h6" className={classes.logoSm}>

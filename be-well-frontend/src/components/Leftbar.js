@@ -2,13 +2,9 @@ import "./leftbar.css";
 import {
   RssFeed,
   Chat,
-  PlayCircleFilledOutlined,
   Group,
   Bookmark,
   HelpOutline,
-  WorkOutline,
-  Event,
-  School,
   ExitToApp
 } from "@material-ui/icons"
 
