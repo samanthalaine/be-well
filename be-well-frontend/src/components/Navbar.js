@@ -13,6 +13,8 @@ import {
   import {Link} from 'react-router-dom'
   import { useContext } from "react";
   import { AuthContext } from "../context/AuthContext";
+  import DonutLargeIcon from '@mui/icons-material/DonutLarge';
+
 
 
   
@@ -102,12 +104,18 @@ import {
               className={classes.searchButton}
               onClick={() => setOpen(true)}
             />
+            
+            <Link to= '/messenger' style={{color: "white"}} >
             <Badge badgeContent={0} color="secondary" className={classes.badge}>
-              <Person />
+              <Mail/>
             </Badge>
+            </Link>
+            <Link to= '/tracker' style={{color: "white"}} >
             <Badge badgeContent={0} color="secondary" className={classes.badge}>
-              <Mail />
+              <DonutLargeIcon/>
             </Badge>
+            </Link>
+          
             <Badge badgeContent={0} color="secondary" className={classes.badge}>
               <Notifications />
             </Badge>
