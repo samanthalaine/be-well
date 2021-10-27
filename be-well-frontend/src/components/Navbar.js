@@ -7,6 +7,7 @@ import {
     makeStyles,
     Toolbar,
     Typography,
+    IconButton
   } from "@material-ui/core";
   import { Cancel, Mail, Notifications, Search, Person, ExitToApp } from "@material-ui/icons";
   import { useState } from "react";
@@ -97,15 +98,15 @@ import {
             
           </Typography>
           <div className={classes.search}>
-            <Search />
-            <InputBase placeholder="Search BeWell..." className={classes.input} />
+            {/* <Search />
+            <InputBase placeholder="Search BeWell..." className={classes.input} /> */}
             <Cancel className={classes.cancel} onClick={() => setOpen(false)} />
           </div>
           <div className={classes.icons}>
-            <Search
+            {/* <Search
               className={classes.searchButton}
               onClick={() => setOpen(true)}
-            />
+            /> */}
             
             <Link to= '/messenger' style={{color: "white"}} >
             <Badge badgeContent={0} color="secondary" className={classes.badge}>

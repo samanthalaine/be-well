@@ -24,7 +24,7 @@ function ExerciseTracker() {
         ],
         datasets: [{
           label: 'My First Dataset',
-          data: [100, 0],
+          data: [1, 0],
           backgroundColor: [
             grey,
             aqua
@@ -40,7 +40,7 @@ function ExerciseTracker() {
         ],
         datasets: [{
           label: 'My Second Dataset',
-          data: [0, 100],
+          data: [0, 1],
           backgroundColor: [
             grey,
             aqua
