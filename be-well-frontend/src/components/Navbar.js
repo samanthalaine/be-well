@@ -3,15 +3,13 @@ import {
     AppBar,
     Avatar,
     Badge,
-    InputBase,
     makeStyles,
     Toolbar,
     Typography,
-    IconButton
   } from "@material-ui/core";
-  import { Cancel, Mail, Notifications, Search, Person, ExitToApp } from "@material-ui/icons";
+  import { Cancel, Mail, Notifications, ExitToApp } from "@material-ui/icons";
   import { useState } from "react";
-  import {Link} from 'react-router-dom'
+  import { Link } from 'react-router-dom'
   import { useContext } from "react";
   import { AuthContext } from "../context/AuthContext";
   import DonutLargeIcon from '@mui/icons-material/DonutLarge';
@@ -78,8 +76,6 @@ import {
     const [open, setOpen] = useState(false);
     const classes = useStyles({ open });
     const { user, dispatch } = useContext(AuthContext);
-    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-    const blankProfilePic = "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="
     const logo = "https://media.discordapp.net/attachments/887887430475186176/902750907853336656/BeWell_Logo.png"
     
     const handleLogout = () =>{

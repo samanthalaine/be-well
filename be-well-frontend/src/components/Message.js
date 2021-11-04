@@ -1,4 +1,4 @@
-import { MessageSharp } from '@material-ui/icons'
+//import { MessageSharp } from '@material-ui/icons'
 import React from 'react'
 import './message.css'
 import { format } from "timeago.js";

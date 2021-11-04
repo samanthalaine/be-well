@@ -4,13 +4,11 @@ import {
     CardActionArea,
     CardActions,
     CardContent,
-    CardMedia,
     makeStyles,
-    Typography,
-    IconButton,
-    Avatar
+    Typography
+    
   } from "@material-ui/core";
-  import { MoreVert, ThumbUpIcon } from "@material-ui/icons";
+  //import { MoreVert, ThumbUpIcon } from "@material-ui/icons";
   import "./post.css";
   import { useState, useEffect, useContext } from "react";
   import axios from "axios";
@@ -70,8 +68,6 @@ import {
    
 
     const classes = useStyles();
-    const blankProfilePic = "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="
-    const blankPage = "https://images.unsplash.com/photo-1531685250784-7569952593d2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGJsYW5rfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
     
     return (
         <main className={classes.content}>
@@ -86,7 +82,7 @@ import {
                   user.profilePicture
                     
                 }
-                alt="profile picture"
+                alt="profile pic"
               />
             </Link>
           <CardContent>

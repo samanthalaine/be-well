@@ -8,34 +8,12 @@ function ChatOnline() {
                 <div className="chatOnlineImgContainer">
                     <img 
                         className="chatOnlineImg"
-                        src="https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHBlcnNvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" 
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" 
                         alt="" 
                     />
                     <div className="chatOnlineBadge"></div>
                 </div>
-                <span className="chatOnlineName">Frankie</span>
-            </div>
-            <div className="chatOnlineFriend">
-                <div className="chatOnlineImgContainer">
-                    <img 
-                        className="chatOnlineImg"
-                        src="https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHBlcnNvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" 
-                        alt="" 
-                    />
-                    <div className="chatOnlineBadge"></div>
-                </div>
-                <span className="chatOnlineName">Frankie</span>
-            </div>
-            <div className="chatOnlineFriend">
-                <div className="chatOnlineImgContainer">
-                    <img 
-                        className="chatOnlineImg"
-                        src="https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHBlcnNvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" 
-                        alt="" 
-                    />
-                    <div className="chatOnlineBadge"></div>
-                </div>
-                <span className="chatOnlineName">Frankie</span>
+                <span className="chatOnlineName">Amy</span>
             </div>
         </div>
     )

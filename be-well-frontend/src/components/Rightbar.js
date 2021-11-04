@@ -1,7 +1,6 @@
 
 import React from "react";
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -22,7 +21,6 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { red } from "@mui/material/colors";
 
 import "./rightbar.css";
-import { Users } from "./dummyData";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -30,7 +28,6 @@ import { AuthContext } from "../context/AuthContext";
 import { Add, Remove } from "@material-ui/icons";
 
 export default function Rightbar({ user  }) {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [friends, setFriends] = useState([]);
 
   const { user: currentUser, dispatch } = useContext(AuthContext);
@@ -107,6 +104,7 @@ export default function Rightbar({ user  }) {
     function HomeRightbar() {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
+    const logo = "https://media.discordapp.net/attachments/887887430475186176/902984461971517480/91011CB1-EDA8-4B78-B657-F81C6F673E35.png"
 
     const handleExpandClick = () => {
       setExpanded(!expanded);
@@ -123,7 +121,7 @@ export default function Rightbar({ user  }) {
             <CardHeader
               avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                  R
+                  <img src={logo} alt=""/>
                 </Avatar>
               }
               action={
@@ -240,7 +238,7 @@ export default function Rightbar({ user  }) {
                   alt="user profile p"
                   className="rightbarFollowingImg"
                 />
-                <span className="rightbarFollowingName">{friend.username}</span>
+                <span className="rightbarFollowingName" >{friend.username}</span>
               </div>
             </Link>
           ))}

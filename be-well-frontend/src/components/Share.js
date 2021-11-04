@@ -3,8 +3,8 @@ import './share.css'
 import {PermMedia, Label,Room, EmojiEmotions, Cancel} from "@material-ui/icons"
 import {
     
-    makeStyles,
-    Typography,
+    makeStyles
+
   } from "@material-ui/core";
   import { AuthContext } from "../context/AuthContext";
   import { useContext, useRef, useState } from "react";
@@ -39,7 +39,6 @@ function Share() {
   const { user } = useContext(AuthContext);
   const desc = useRef();
   const [file, setFile] = useState(null);
-  const blankProfilePic = "https://media.istockphoto.com/illustrations/female-profile-picture-illustration-id178844408?k=20&m=178844408&s=612x612&w=0&h=SKi1Xp6jss2GuLq_PN5CR5C9_J5NlcnmBAp2qo0V810="
   const classes = useStyles();
 
 //if there is a new file, new form data will be created. 
@@ -104,7 +103,7 @@ function Share() {
         <form className="shareBottom" onSubmit={submitHandler}>
           <div className="shareOptions">
             <label htmlFor="file" className="shareOption">
-              <PermMedia htmlColor="tomato" className="shareIcon" />
+              <PermMedia htmlColor="#2eb8d1" className="shareIcon" />
               <span className="shareOptionText">Photo</span>
               <input
                 style={{ display: "none" }}
@@ -115,15 +114,15 @@ function Share() {
               />
             </label>
             <div className="shareOption">
-              <Label htmlColor="blue" className="shareIcon" />
+              <Label htmlColor="#2eb8d1" className="shareIcon" />
               <span className="shareOptionText">Tag</span>
             </div>
             <div className="shareOption">
-              <Room htmlColor="green" className="shareIcon" />
+              <Room htmlColor="#2eb8d1" className="shareIcon" />
               <span className="shareOptionText">Location</span>
             </div>
             <div className="shareOption">
-              <EmojiEmotions htmlColor="goldenrod" className="shareIcon" />
+              <EmojiEmotions htmlColor="#2eb8d1" className="shareIcon" />
               <span className="shareOptionText">Feelings</span>
             </div>
           </div>
