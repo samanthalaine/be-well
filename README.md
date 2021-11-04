@@ -25,5 +25,5 @@ BeWell is a social media app where people can connect with others about their fi
 - Follow/Unfollow
 - View the posts of people you follow
 - Like/Unlike posts
-- Message your friends
+- Direct message your friends
 - Keep track of personal exercise streak
