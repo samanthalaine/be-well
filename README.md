@@ -7,7 +7,7 @@ Capstone Project for Flatiron School
 
 ## About
 
-BeWell is a social media app where people can connect with others about their fitness, diet, meditation goals, and overall well-being.
+BeWell is a social media app where people can connect with others about their fitness, diet, meditation goals, and overall well-being!
 
 ## Technologies
 - JavaScript
