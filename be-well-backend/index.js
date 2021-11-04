@@ -64,6 +64,11 @@ app.use("/api/messages", messageRoute);
 
 const PORT = process.env.PORT || 8800
 
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('be-well-frontend/build'))
+}
+
 app.listen(PORT, () => {
   console.log(`Backend server is running on ${PORT}`);
 });
