@@ -61,11 +61,6 @@ export default function Leftbar({}) {
             <span className="leftbarListItemText">Bookmarks</span>
           </li>
           <li className="leftbarListItem">
-            <HelpOutline className="leftbarIcon" />
-            <span className="leftbarListItemText">Questions</span>
-          </li>
-          
-          <li className="leftbarListItem">
             <ExitToApp className="leftbarIcon" />
             <span className="leftbarListItemText">Logout</span>
           </li>
