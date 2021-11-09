@@ -13,10 +13,6 @@ const cors = require('cors');
 const multer = require("multer");
 const path = require("path");
 
-
-
-
-
 dotenv.config();
 
 mongoose.connect(
@@ -66,7 +62,7 @@ const PORT = process.env.PORT || 8800
 
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('be-well-frontend/build'))
+  app.use(express.static('client/build'))
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
   })
