@@ -61,12 +61,16 @@ app.use("/api/messages", messageRoute);
 const PORT = process.env.PORT || 8800
 
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'))
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
-  })
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static('client/build'))
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+//   })
+// }
+
+app.get('/', (req, res) => {
+  res.send("Hello to BeWell server")
+})
 
 app.listen(PORT, () => {
   console.log(`Backend server is running on ${PORT}`);
