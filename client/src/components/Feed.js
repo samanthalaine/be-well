@@ -34,7 +34,7 @@ function Feed({username}) {
             <div className="feedWrapper">
             {(!username || username === user.username) && <Share />}
                 {posts.map((post)=>(
-                    <Post key={post._id} post={post}/>
+                    <Post key={post._id} post={post} setPosts={setPosts} posts={posts}/>
                 ))}
             </div>
         </div>

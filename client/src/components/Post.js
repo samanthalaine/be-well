@@ -36,7 +36,7 @@ import {
     },
   }));
   
-  const Post = ({ post }) => {
+  const Post = ({ post, posts, setPosts }) => {
 
     const [like,setLike] = useState(post.likes.length)
     const [isLiked,setIsLiked] = useState(false)
@@ -65,7 +65,16 @@ import {
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);
   };
-   
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`/posts/${post._id}`, {
+        data: { userId:currentUser._id },
+      });
+      setPosts(posts.filter(post => post._id !== id));
+    } catch (err) {}
+  };
+
 
     const classes = useStyles();
     
@@ -103,6 +112,7 @@ import {
           <Button size="small" onClick={likeHandler} style={{backgroundColor: '#80DEEA', color: '#fafafa'}}>
           {like === 1 ? `${like} Like` : `${like} Likes`}
           </Button>
+          <Button size="small" onClick={()=>handleDelete(post._id)} style={{backgroundColor: 'red', color: '#fafafa'}}>delete</Button>
           
           <Typography className="postCommentText">{post.comment > 1 ? <span>{post.comment} comments</span> : <span>{post.comment} comment</span>}</Typography>
         </CardActions>
